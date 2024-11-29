@@ -19,26 +19,31 @@ export const CoursePage = () => {
             </div>
 
             <div className="overflow-y-scroll w-full h-lvh border ~p-4/12">
-                <div className="flex flex-wrap justify-start items-center sm:flex-row ~gap-8/12">
+                <div className="flex flex-wrap justify-start items-center sm:flex-row ~gap-4/12">
                     {
                         searchData.map((course, index) => {
-                            return <div key={index} className="flex sm:flex-col gap-4">
-                                <div className="w-auto sm:~w-36/64 ~h-24/48 border rounded-xl overflow-hidden">
-                                    <iframe src={course.url} frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-full"></iframe>
-                                </div>
-                                <div className="flex flex-col gap-1 justify-between sm:~w-36/64">
-                                    <div className="line-clamp-2 sm:line-clamp-1 text-xs">{course.title}</div>
-                                    <div className="line-clamp-1 text-xs flex justify-between items-center">
-                                        <p>{course.update}</p>
-                                        <p>{course.duration}</p>
+                            return <>
+                                <div key={index} className="flex sm:flex-col gap-3 sm:p-2 border rounded-xl overflow-hidden">
+                                    <div className="w-3/6 sm:~w-36/64 ~h-28/48 border  overflow-hidden rounded-xl">
+                                        <iframe src={course.url} frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-full"></iframe>
                                     </div>
-                                    <div className="line-clamp-1 text-xs">{course.lecturer}</div>
+                                    <div className="flex flex-col justify-between gap-2 p-2 w-3/6 sm:~w-36/64">
+                                        <div className="flex flex-col gap-0.5">
+                                            <p className="line-clamp-1 ~text-sm/xl font-semibold">{course.name}</p>
+                                            <p className="text-xs text-green-600">{course.duration}</p>
+                                            <p className=" ~text-xs/sm">{course.lecturer}</p>
+                                        </div>
+
+                                        <div className="flex gap-2">
+                                            <button className=" w-full p-2  bg-red-700 rounded text-primary ~text-xs/sm">View</button>
+                                            <button className=" w-full p-2  bg-red-700 rounded text-primary ~text-xs/sm">Save</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </>
                         })
                     }
                 </div>
-
                 <p className="w-full flex text-center justify-center items-center gap-2 ~pt-8/12 text-gray-400 ">More Not Found<IoReload /></p>
             </div>
         </div>

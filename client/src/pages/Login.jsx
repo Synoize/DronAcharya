@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export const Login = () => {
     const navigate = useNavigate();
     const { storeTokenInLS } = useAuth();
+    const BASE_URL = "http://localhost:5000";
 
     const handleGoBack = () => {
         navigate(-1);
@@ -32,7 +33,7 @@ export const Login = () => {
         console.log(user);
         
         try {
-            const URL = `http://localhost:5000/api/auth/login`;
+            const URL = `${BASE_URL}/api/auth/login`;
             const response = await fetch(URL, {
                 method: 'POST',
                 headers: {
@@ -67,8 +68,8 @@ export const Login = () => {
     </div>
     }
 
-    return <section className="flex flex-col gap-10">
-        <div className="flex justify-between">
+    return <section className="flex flex-col gap-10 items-center ~p-4/12">
+        <div className="flex justify-between w-full sm:w-96">
             <div>
                 <h1 className="font-semibold text-xl">Login</h1>
                 <NavLink to="/signup" className="text-sm font-semibold ">or <p className="text-primary_special">Create an account</p></NavLink>
@@ -80,7 +81,7 @@ export const Login = () => {
             </div>
         </div>
 
-        <form onSubmit={handleFormSubmit} className="sm:flex">
+        <form onSubmit={handleFormSubmit} className="sm:flex w-full sm:w-96">
             <ul>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="email" className="font-semibold text-primary_text">Email <span className="text-primary_special">*</span></label>

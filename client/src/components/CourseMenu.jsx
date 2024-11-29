@@ -4,7 +4,6 @@ import { MdOutlineSubscriptions } from "react-icons/md";
 import { BsDownload } from "react-icons/bs";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { MdHistory } from "react-icons/md";
-import { RiVideoAddLine } from "react-icons/ri";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { useState } from "react";
 
@@ -43,7 +42,7 @@ export const CourseMenu = () => {
 
             <NavLink to="/courses/watch-later" style={getActivePage} title="Watch Later" className="flex justify-center items-center sm:justify-start sm:gap-2 p-2 rounded hover:bg-blue-800 "><MdOutlineWatchLater className="text-lg"/><p className="hidden sm:block">Watch Later</p></NavLink>
 
-            <NavLink to="/courses/upload" style={getActivePage} title="Upload" className="flex justify-center items-center sm:justify-start sm:gap-2 p-2 rounded hover:bg-blue-800 "><RiVideoAddLine className="text-lg"/><p className="hidden sm:block">Upload</p></NavLink>
+            
         </>
     );
 }

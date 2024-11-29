@@ -1,13 +1,13 @@
 import { GoArrowRight } from "react-icons/go";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useAuth } from "../../store/auth";
+import { useAuth } from "../context/auth";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { BASE_URL } from "../../services/helper";
 
 export const Contact = () => {
     const navigate = useNavigate();
+    const BASE_URL = "http://localhost:5000";
 
     const [loading, setLoading] = useState(false);
     const [userData, setUserData] = useState(true);
@@ -79,8 +79,8 @@ export const Contact = () => {
         </div>
     }
 
-    return <section className="flex flex-col gap-10">
-        <div className="flex justify-between ">
+    return <section className="flex flex-col gap-10 items-center ~p-4/12">
+        <div className="flex justify-between w-full sm:w-96">
             <div>
                 <h1 className="font-semibold text-xl">Contact Us</h1>
                 <NavLink to="/login" className="text-sm font-semibold ">or <p className="text-red-400">login to your account</p></NavLink>
@@ -92,7 +92,7 @@ export const Contact = () => {
             </div>
         </div>
 
-        <form onSubmit={handleFormSubmit} className="sm:flex">
+        <form onSubmit={handleFormSubmit} className="sm:flex w-full sm:w-96">
             <ul>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="fullname" className="font-semibold text-gray-400 text-nowrap">Full Name <span className="text-red-500">*</span>

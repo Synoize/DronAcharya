@@ -19,6 +19,8 @@ import { AdminLayout } from "./layouts/AdminLayout";
 import { AdminUsers } from "./pages/admin/Admin-Users";
 import { AdminContacts } from "./pages/admin/Admin-Contacts";
 import { AdminUserUpdate } from "./pages/admin/Admin-User-Update";
+import { AdminCourses } from "./pages/admin/Admin-Courses";
+import { Contact } from "./pages/Contact";
 
 const App = () => {
   const { loading } = useData();
@@ -35,7 +37,7 @@ const App = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Register />} />
                 <Route path="/logout" element={<Logout />} />
-                {/* <Route path="/contact" element={<Contact />} /> */}
+                <Route path="/contact" element={<Contact />} />
 
                 <Route path="/courses" element={<CourseLayout />}>
                   <Route path="" element={<CoursePage />} />
@@ -52,7 +54,8 @@ const App = () => {
                   <Route path="users" element={<AdminUsers />} />
                   <Route path="users/:id/edit" element={<AdminUserUpdate />} />
                   <Route path="contacts" element={<AdminContacts />} />
-                  <Route path="courses" element={<AdminContacts />} />
+                  <Route path="courses" element={<AdminCourses />} />
+                  <Route path="course/upload" element={<AdminCourses />} />
                 </Route>
             </Routes>
           </Router>

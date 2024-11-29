@@ -9,6 +9,7 @@ export const Register = () => {
     const navigate = useNavigate();
     const { storeTokenInLS } = useAuth();
     const [loading, setLoading] = useState(false);
+    const BASE_URL = "http://localhost:5000";
 
     const handleGoBack = () => {
         navigate(-1);
@@ -35,7 +36,7 @@ export const Register = () => {
         console.log(user); // take input user data 
 
         try {
-            const URL = `http://localhost:5000/api/auth/register`;
+            const URL = `${BASE_URL}/api/auth/register`;
             const response = await fetch(URL, {
                 method: "POST",
                 headers: {
@@ -71,8 +72,8 @@ export const Register = () => {
         </div>
     }
 
-    return <section className="flex flex-col gap-10">
-        <div className="flex justify-between">
+    return <section className="flex flex-col gap-10 items-center ~p-4/12">
+        <div className="flex justify-between w-full sm:w-96">
             <div>
                 <h1 className="font-semibold text-xl">Sign up</h1>
                 <NavLink to="/login" className="text-sm font-semibold ">or <p className="text-primary_special">Login to your account</p></NavLink>
@@ -84,7 +85,7 @@ export const Register = () => {
             </div>
         </div>
 
-        <form onSubmit={handleFormSubmit} className="sm:flex">
+        <form onSubmit={handleFormSubmit} className="sm:flex w-full sm:w-96">
             <ul>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="phone" className="font-semibold text-primary_text text-nowrap">Phone <span className="text-primary_special">*</span></label>

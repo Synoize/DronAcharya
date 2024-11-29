@@ -4,6 +4,7 @@ import { HiOutlineUser } from "react-icons/hi2";
 import { IoIosContacts } from "react-icons/io";
 import { useState } from "react";
 import { FaLaptopCode } from "react-icons/fa";
+import { RiVideoAddLine } from "react-icons/ri";
 
 export const AdminMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ export const AdminMenu = () => {
 
             <NavLink to="/admin/courses" style={getActivePage} title="Courses" className="flex justify-center items-center sm:justify-start sm:gap-2 p-2 rounded hover:bg-blue-800 "><FaLaptopCode className="text-lg"/><p className="hidden sm:block">Courses</p></NavLink>
 
-            {/* <NavLink to="/admin/courses" style={getActivePage} title="Subscriptions" className="flex justify-center items-center sm:justify-start sm:gap-2 p-2 rounded hover:bg-blue-800 "><FaLaptopCode className="text-lg"/><div  style={{openMenuPage}}>Courses</div></NavLink> */}
+            <NavLink to="/admin/courses//upload" style={getActivePage} title="Upload" className="flex justify-center items-center sm:justify-start sm:gap-2 p-2 rounded hover:bg-blue-800 "><RiVideoAddLine className="text-lg"/><p className="hidden sm:block">Upload</p></NavLink>
         </>
     );
 }
