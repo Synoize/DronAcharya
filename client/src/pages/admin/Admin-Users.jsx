@@ -60,9 +60,9 @@ export const AdminUsers = () => {
     }, [])
 
     return <>
-        <section className="w-full max-h-screen overflow-auto">
-            <p className="px-8 pt-4 ~text-lg/xl font-semibold">Admin User Data</p>
-            <div className="overflow-scroll p-8">
+        <section className="w-full max-h-screen overflow-auto ~p-4/12">
+            <p className=" ~text-lg/xl font-semibold pb-4">Admin User Data</p>
+            <div className="overflow-scroll h-lvh">
                 {
                     loading ? <Loading/> : (
                         <table className="table-auto w-96 border-collapse ~text-xs/xl">
@@ -80,10 +80,10 @@ export const AdminUsers = () => {
                                 {users.map((currUser, index) => {
                                     const { _id, fullname, username, email, phone } = currUser;
                                     return (<tr key={index} className="text-left">
-                                        <td className="border p-2 text-nowrap">{username}</td>
-                                        <td className="border p-2 text-nowrap">{fullname}</td>
-                                        <td className="border p-2 text-nowrap">{email}</td>
-                                        <td className="border p-2 text-nowrap">{phone}</td>
+                                        <td className="border p-2">{username}</td>
+                                        <td className="border p-2">{fullname}</td>
+                                        <td className="border p-2">{email}</td>
+                                        <td className="border p-2">{phone}</td>
                                         <td className="border p-2">
                                             <Link to={`/admin/users/${_id}/edit`} className="bg-blue-500 text-white px-2 py-1 rounded">Edit</Link>
                                         </td>

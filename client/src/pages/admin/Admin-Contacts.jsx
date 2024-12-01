@@ -57,9 +57,9 @@ export const AdminContacts = () => {
     }, [])
 
     return <>
-        <section className="w-full max-h-screen overflow-auto">
-            <p className="px-8 pt-4 ~text-lg/xl font-semibold">Admin Contacts Data</p>
-            <div className="overflow-scroll p-8">
+        <section className="w-full max-h-screen overflow-auto ~p-4/12">
+            <p className="~text-lg/xl font-semibold pb-4">Admin Contacts Data</p>
+            <div className="overflow-scroll h-lvh">
                 {
                     loading ? <Loading /> : (
                         <table className="table-auto w-full border-collapse ~text-xs/xl">
@@ -81,7 +81,7 @@ export const AdminContacts = () => {
                                         <td className="border p-2">{phone}</td>
                                         <td className="border p-2">{message}</td>
                                         <td className="border p-2">
-                                            <button onClick={() => deleteContact(_id)} className="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                                            <button onClick={() => deleteContact(_id)} className="bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded">Delete</button>
                                         </td>
                                     </tr>)
                                 })}

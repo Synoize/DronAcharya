@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/auth";
 import { Loading } from "../../UI/Loading";
+import { IoReload } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export const AdminCourses = () => {
     const [loading, setLoading] = useState(true);
@@ -28,7 +30,7 @@ export const AdminCourses = () => {
         }
     }
 
-    // delete the contact on delete button
+    // delete the course on delete button
     const deleteCourse = async (id) => {
         setLoading(true);
         try {
@@ -39,13 +41,14 @@ export const AdminCourses = () => {
                     Authorization: authorizationToken,
                 }
             });
-            console.log("Courses after delete: ", response.data);
+
+            console.log("courses after delete: ", response.data);
 
             if (response.statusText) {
+                toast.success("Deleted Successfully")
                 getAllCourseData();
-                toast.success("Course Deleted Successfully");
             } else {
-                toast.warning("Course Not Deleted");
+                toast.warning("Not Deleted");
             }
         } catch (error) {
             console.log(error);
@@ -57,52 +60,41 @@ export const AdminCourses = () => {
     }, [])
 
     return <>
-        <section className="w-full max-h-screen overflow-auto">
-            <p className="px-8 pt-4 ~text-lg/xl font-semibold">Admin Contacts Data</p>
-            <div className="overflow-scroll p-8">
-                {
-                    loading ? <Loading /> : (
-                        <table className="table-auto w-full border-collapse ~text-xs/xl">
-                            <thead className="border-2">
-                                <tr className="text-left ">
-                                    <th className="border p-2">url</th>
-                                    <th className="border p-2">name</th>
-                                    <th className="border p-2">title</th>
-                                    <th className="border p-2">description</th>
-                                    <th className="border p-2">price</th>
-                                    <th className="border p-2">language</th>
-                                    <th className="border p-2">lecturer</th>
-                                    <th className="border p-2">update</th>
-                                    <th className="border p-2">duration</th>
-                                    <th className="border p-2">offer</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {courses.map((course, index) => {
-                                    const { _id, url, name, title, description, price, language, lecturer, update, duration, offer } = course;
-                                    console.log("hjdhkasjdhka: ", course);
+        <section className="w-full max-h-screen overflow-auto ~p-4/12">
+            <p className="~text-lg/xl font-semibold pb-4">Admin Courses Data</p>
+            {
+                loading ? <Loading /> : (
+                    <div className="overflow-y-scroll w-full h-lvh ">
+                        <div className="flex flex-wrap justify-start items-center sm:flex-row ~gap-4/12">
+                            {
+                                courses.map((course, index) => {
+                                    const { _id, url, name, duration, lecturer } = course;
 
-                                    return (<tr key={index} className="text-left">
-                                        <td className="border p-2">{url}</td>
-                                        <td className="border p-2">{name}</td>
-                                        <td className="border p-2">{title}</td>
-                                        <td className="border p-2">{description}</td>
-                                        <td className="border p-2">{price}</td>
-                                        <td className="border p-2">{language}</td>
-                                        <td className="border p-2">{lecturer}</td>
-                                        <td className="border p-2">{update}</td>
-                                        <td className="border p-2">{duration}</td>
-                                        <td className="border p-2">{offer}</td>
-                                        <td className="border p-2">
-                                            <button onClick={() => deleteCourse(_id)} className="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
-                                        </td>
-                                    </tr>)
-                                })}
-                            </tbody>
-                        </table>
-                    )
-                }
-            </div>
+                                    return <div key={index} className="flex sm:flex-col gap-3 sm:p-2 border rounded-xl overflow-hidden">
+                                        <div className="w-3/6 sm:~w-36/64 ~h-28/48 border  overflow-hidden rounded-xl">
+                                            <iframe src={url} frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-full"></iframe>
+                                        </div>
+                                        <div className="flex flex-col justify-between gap-2 p-2 w-3/6 sm:~w-36/64">
+                                            <Link to={`/admin/course/${_id}/view`} className="flex flex-col gap-0.5">
+                                                <p className="line-clamp-1 ~text-sm/xl font-semibold">{name}</p>
+                                                <p className="text-xs text-green-600">{duration}</p>
+                                                <p className=" ~text-xs/sm">{lecturer}</p>
+                                            </Link>
+
+                                            <div className="flex gap-2">
+                                                <Link to={`/admin/course/${_id}/edit`} className="w-full p-2 bg-blue-600 hover:bg-blue-700 rounded text-center text-primary ~text-xs/sm">Edit</Link>
+
+                                                <button onClick={() => deleteCourse(_id)} className="w-full p-2 bg-red-600 hover:bg-red-700 rounded text-primary ~text-xs/sm">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                })
+                            }
+                        </div>
+                        <p className="w-full flex text-center justify-center items-center gap-2 ~pt-8/12 text-gray-400 ">More Not Available <IoReload /></p>
+                    </div>
+                )
+            }
         </section>
     </>
 }

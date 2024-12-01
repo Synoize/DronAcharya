@@ -23,7 +23,7 @@ export const Home = () => {
         </section>
 
         <section className="flex flex-col ~gap-8/20 ~p-8/20 bg-gradient-to-b from-black to-blue-800 ">
-            <h1 className="~text-lg/4xl text-primary font-semibold">TRENDING COURSES.</h1>
+            <h1 className="~text-lg/4xl text-primary font-semibold">TRENDING COURSES</h1>
             <div className="flex flex-col justify-center items-center sm:flex-row ~gap-8/20">
                 <span className="flex flex-col gap-4">
                     <div className="~w-48/64 ~h-36/48 border rounded-xl"></div>
@@ -48,6 +48,22 @@ export const Home = () => {
                         <div className="~w-48/64 h-4 border rounded-md"></div>
                     </div>
                 </span>
+            </div>
+        </section>
+        
+        <section className="flex flex-col ~gap-8/20 ~p-8/20 bg-gradient-to-b from-blue-800 to-black  ">
+            <h1 className="~text-lg/4xl text-primary font-semibold">WHY CHOOSE DRONACHARYA OF ALL  ???</h1>
+            <div className="flex flex-col sm:flex-row-reverse sm:justify-between items-center sm:items-start ~gap-8/12">
+            <span>
+                    <iframe src="https://lottie.host/embed/76b83385-f50c-4f9c-a51c-7793fd3ec66b/e7ejUEIo1W.lottie" className="~w-56/96 ~h-40/56"></iframe>
+                </span>
+                <div className="flex flex-col gap-4 ~text-lg/2xl text-primary">
+                    <li>Anyone can be a learner as well as the teacher.</li>
+                    <li>Learn from the best teachers chosen around the world.</li>
+                    <li>Easy to understand lectures for everyone.</li>
+                    <li>Elevate your skill and knowledge from Beginner level to Professional.</li>
+                    <li>Wide variety of lectures to choose from.</li>
+                </div>
             </div>
         </section>
     </main>

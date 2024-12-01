@@ -29,21 +29,20 @@ export const AdminUserUpdate = () => {
     const getSingleUserData = async () => {
         try {
             const URL = `${BASE_URL}/api/admin/users/${params.id}`;
-            const response = await fetch(URL, {
-                method: "GET",
+            const response = await axios.get(URL, {
                 headers: {
                     Authorization: authorizationToken,
                 }
             });
 
-            const userData = await response.json();
-            console.log("get user data: ", userData);
+            // const userData = await response.data;
+            console.log("get user data: ", response.data);
 
             setUserData({
-                username: userData.username,
-                fullname: userData.fullname,
-                email: userData.email,
-                phone: String(userData.phone),
+                username: response.data.username,
+                fullname: response.data.fullname,
+                email: response.data.email,
+                phone: String(response.data.phone),
             });
         } catch (error) {
             console.log(error);
@@ -96,12 +95,9 @@ export const AdminUserUpdate = () => {
         }
     }
 
-    return <div className="p-6 w-full flex flex-col items-center gap-6">
+    return <div className="w-full flex flex-col items-center gap-4 overflow-auto ~p-4/12">
         <div className="w-full sm:w-96 flex items-start justify-between">
-            <div>
-                <h1 className="font-semibold ~text-lg/xl">Update User Data</h1>
-                <hr className="h-0.5 mt-2 border-none bg-gray-500 rounded-full" />
-            </div>
+            <h1 className="font-semibold ~text-lg/xl">Update User Data</h1>
 
             <div className="py-2">
                 <RxCross1 onClick={handleGoBack} className="text-primary_special text-xl cursor-pointer" />

@@ -7,6 +7,6 @@ const appController = require('../controllers/app-controller');
 router.route('/app').get(appController.getAppData);
 
 router.route('/courses').get(courseController.getAllCourses);
-router.route('/courses/view/:id').get(courseController.getCourseById);
+router.route('/courses/:id').get(courseController.getCourseById);
 
 module.exports = router;

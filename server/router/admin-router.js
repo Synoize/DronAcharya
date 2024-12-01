@@ -22,6 +22,5 @@ router.route('/courses/add').post(validate(courseSchema), authMiddleware, adminM
 router.route('/courses/:id').get(authMiddleware, adminMiddleware, courseController.getCourseById);
 router.route('/courses/update/:id').patch(validate(courseSchema), authMiddleware, adminMiddleware, courseController.updateCourseById);
 router.route('/courses/delete/:id').delete(authMiddleware, adminMiddleware, courseController.deleteCourseById);
-router.route('/courses/view/:id').get(authMiddleware, adminMiddleware, courseController.getCourseById);
 
 module.exports = router;

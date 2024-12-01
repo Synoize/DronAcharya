@@ -10,7 +10,7 @@ import { ContestPage } from "./pages/ContestPage";
 import { AboutPage } from "./pages/AboutPage";
 import { useData } from "./context/data";
 import { CourseLayout } from "./layouts/CourseLayout";
-import { WatchLaterPage } from "./pages/WatchLaterPage";
+import { PlaylistPage } from "./pages/PlaylistPage";
 import { HistoryPage } from "./pages/HistoryPage";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
@@ -21,6 +21,10 @@ import { AdminContacts } from "./pages/admin/Admin-Contacts";
 import { AdminUserUpdate } from "./pages/admin/Admin-User-Update";
 import { AdminCourses } from "./pages/admin/Admin-Courses";
 import { Contact } from "./pages/Contact";
+import { AdminCoursesUpload } from "./pages/admin/Admin-Courses-Upload";
+import { AdminCourseUpdate } from "./pages/admin/Admin-Course-Update";
+import { AdminCourseView } from "./pages/admin/Admin-Course-View";
+import { CourseView } from "./pages/CourseView";
 
 const App = () => {
   const { loading } = useData();
@@ -39,11 +43,12 @@ const App = () => {
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/contact" element={<Contact />} />
 
-                <Route path="/courses" element={<CourseLayout />}>
-                  <Route path="" element={<CoursePage />} />
+                <Route path="courses" element={<CourseLayout />}>
+                  {/* <Route path="" element={<CoursePage />} /> */}
+                  <Route path="dashboard" element={<CoursePage />} />
+                  <Route path=":id/view" element={<CourseView />} />
+                  <Route path="playlist" element={<PlaylistPage />} />
                   <Route path="history" element={<HistoryPage />} />
-                  <Route path="watch-later" element={<WatchLaterPage />} />
-                  <Route path="upload" element={<WatchLaterPage />} />
                 </Route>
                 <Route path="/contest" element={<ContestPage />} />
                 <Route path="/about" element={<AboutPage />} />
@@ -55,7 +60,9 @@ const App = () => {
                   <Route path="users/:id/edit" element={<AdminUserUpdate />} />
                   <Route path="contacts" element={<AdminContacts />} />
                   <Route path="courses" element={<AdminCourses />} />
-                  <Route path="course/upload" element={<AdminCourses />} />
+                  <Route path="course/upload" element={<AdminCoursesUpload />} />
+                  <Route path="course/:id/edit" element={<AdminCourseUpdate />} />
+                  <Route path="course/:id/view" element={<AdminCourseView />} />
                 </Route>
             </Routes>
           </Router>

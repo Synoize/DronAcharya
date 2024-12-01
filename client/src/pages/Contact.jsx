@@ -84,7 +84,7 @@ export const Contact = () => {
             <div>
                 <h1 className="font-semibold text-xl">Contact Us</h1>
                 <NavLink to="/login" className="text-sm font-semibold ">or <p className="text-red-400">login to your account</p></NavLink>
-                <hr className="w-10 h-0.5 mt-2 border-none bg-gray-500 rounded-full" />
+                <hr className="w-20 h-0.5 mt-2 border-none bg-gray-500 rounded-full" />
             </div>
 
             <div className="p-2 ">
