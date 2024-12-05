@@ -83,12 +83,11 @@ export const Contact = () => {
         <div className="flex justify-between w-full sm:w-96">
             <div>
                 <h1 className="font-semibold text-xl">Contact Us</h1>
-                <NavLink to="/login" className="text-sm font-semibold ">or <p className="text-red-400">login to your account</p></NavLink>
-                <hr className="w-20 h-0.5 mt-2 border-none bg-gray-500 rounded-full" />
+                <NavLink to="/login" className="text-sm font-semibold ">or <p className="text-special_blue">login to your account</p></NavLink>
             </div>
 
             <div className="p-2 ">
-                <GoArrowRight onClick={handleGoBack} className="text-primary_special text-xl cursor-pointer" />
+                <GoArrowRight onClick={handleGoBack} className="text-red-500 text-xl cursor-pointer" />
             </div>
         </div>
 
@@ -112,7 +111,7 @@ export const Contact = () => {
                     <textarea value={contact.message} onChange={handleInputChange} required autoFocus autoComplete="off" name="message" id="message" rows={5} className="scroll_yh outline-none font-semibold text-gray-600"></textarea>
                 </li>
 
-                <button type="submit" className="w-full mt-4 p-4  bg-primary_special text-white hover:bg-red-500">Continue</button>
+                <button type="submit" className="w-full mt-4 p-4 bg-special_blue text-white hover:bg-blue-600">Continue</button>
             </ul>
         </form>
     </section>

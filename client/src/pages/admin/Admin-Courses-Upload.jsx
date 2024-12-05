@@ -78,7 +78,7 @@ export const AdminCoursesUpload = () => {
     return <section className="flex flex-col gap-4 w-full items-center ~p-4/12">
         <div className="flex justify-between w-full sm:w-96">
             <h1 className="font-semibold ~text-lg/xl">Admin Course Upload</h1>
-            <span className="p-1"><GoArrowRight onClick={handleGoBack} className="text-primary_special text-xl cursor-pointer" /></span>
+            <span className="p-1"><GoArrowRight onClick={handleGoBack} className="text-red-500 text-xl cursor-pointer" /></span>
         </div>
 
         <form onSubmit={handleFormSubmit} className="sm:flex w-full sm:w-96">
@@ -143,7 +143,7 @@ export const AdminCoursesUpload = () => {
                     <input value={course.offer} onChange={handleInputChange} required autoComplete="off" type="text" name="offer" id="offer" className="outline-none font-semibold text-gray-600 sm:w-96" />
                 </li>
 
-                <button type="submit" className="w-full mt-4 p-4  bg-primary_special text-white hover:bg-red-500">Continue</button>
+                <button type="submit" className="w-full mt-4 p-4  bg-special_blue text-white hover:bg-blue-600">Upload</button>
             </ul>
         </form>
     </section>

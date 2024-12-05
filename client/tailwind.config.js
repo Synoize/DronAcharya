@@ -16,9 +16,10 @@ export default {
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        special_blue: "var(--special_blue)",
+        special_green: "var(--special_green)",
         primary_special: "var(--primary_special)",
         secondary_special: "var(--secondary_special)",
-        primary_text: "var(--primary_text)",
       }
     },
   },

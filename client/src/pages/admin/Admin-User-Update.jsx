@@ -100,7 +100,7 @@ export const AdminUserUpdate = () => {
             <h1 className="font-semibold ~text-lg/xl">Update User Data</h1>
 
             <div className="py-2">
-                <RxCross1 onClick={handleGoBack} className="text-primary_special text-xl cursor-pointer" />
+                <RxCross1 onClick={handleGoBack} className="text-red-500 text-xl cursor-pointer" />
             </div>
         </div>
 
@@ -127,7 +127,7 @@ export const AdminUserUpdate = () => {
                             <input value={userData.phone} onChange={handleInputChange} required autoComplete="off" type="number" name="phone" id="phone" className="outline-none font-semibold text-gray-600" />
                         </li>
 
-                        <button type="submit" className="w-full mt-4 p-4  bg-red-400 text-white hover:bg-red-500 clickEffect">Update</button>
+                        <button type="submit" className="w-full mt-4 p-4  bg-special_blue text-white hover:bg-blue-600 clickEffect">Update</button>
                     </ul>
                 )
             }

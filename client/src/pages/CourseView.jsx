@@ -72,7 +72,7 @@ export const CourseView = () => {
             <h1 className="font-semibold ~text-lg/xl">View Course Data</h1>
 
             <div className="py-2">
-                <GoArrowRight onClick={handleGoBack} className="text-primary_special text-xl cursor-pointer" />
+                <GoArrowRight onClick={handleGoBack} className="text-red-500 text-xl cursor-pointer" />
             </div>
         </div>
 
@@ -96,8 +96,8 @@ export const CourseView = () => {
                             <p className=" ~text-xs/sm">Duration : {courseData.duration}</p>
                             <p className=" ~text-xs/sm">Offer : ₹ {courseData.offer}</p>
                             <div className="flex gap-2">
-                                <p className="w-full bg-green-700 font-semibold rounded text-primary text-sm flex justify-center items-center">₹ {courseData.price}</p>
-                                <button className=" w-full p-2 bg-blue-700 rounded text-primary ~text-xs/sm">Save</button>
+                                <p className="w-full bg-green-500 font-semibold rounded text-primary text-sm flex justify-center items-center">₹ {courseData.price}</p>
+                                <button className=" w-full p-2 bg-blue-500 hover:bg-blue-600 rounded text-primary ~text-xs/sm">Save</button>
                             </div>
                         </div>
                     </div>

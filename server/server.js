@@ -22,7 +22,7 @@ app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
 app.use("/api/data", dataRoute);
- 
+
 app.use("/api/admin", adminRoute); // let's define admin route
 
 app.use(errorMiddleware);

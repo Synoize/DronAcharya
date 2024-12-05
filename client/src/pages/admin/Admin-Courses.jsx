@@ -82,9 +82,9 @@ export const AdminCourses = () => {
                                             </Link>
 
                                             <div className="flex gap-2">
-                                                <Link to={`/admin/course/${_id}/edit`} className="w-full p-2 bg-blue-600 hover:bg-blue-700 rounded text-center text-primary ~text-xs/sm">Edit</Link>
+                                                <Link to={`/admin/course/${_id}/edit`} className="w-full p-2 bg-special_blue hover:bg-blue-600 rounded text-center text-primary ~text-xs/sm">Edit</Link>
 
-                                                <button onClick={() => deleteCourse(_id)} className="w-full p-2 bg-red-600 hover:bg-red-700 rounded text-primary ~text-xs/sm">Delete</button>
+                                                <button onClick={() => deleteCourse(_id)} className="w-full p-2 bg-red-500 hover:bg-red-600 rounded text-primary ~text-xs/sm">Delete</button>
                                             </div>
                                         </div>
                                     </div>

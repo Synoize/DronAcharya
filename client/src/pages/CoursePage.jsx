@@ -3,9 +3,16 @@ import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { IoCaretDownSharp, IoReload } from "react-icons/io5";
 import { useData } from "../context/data";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const CoursePage = () => {
     const { search, setSearch, searchData } = useData();
+
+    const [saveCourse, setSaveCourse] = useState(new Set([1]))
+    const handleCourseSave = () => {
+        console.log(saveCourse(0));
+
+    }
 
     return <>
         <div className="w-full flex flex-col">
@@ -27,7 +34,7 @@ export const CoursePage = () => {
                             const { _id, url, name, duration, lecturer } = course;
 
                             return <div key={index} className="flex sm:flex-col gap-3 sm:p-2 border rounded-xl overflow-hidden">
-                                <div className="w-3/6 sm:~w-36/64 ~h-28/48 border  overflow-hidden rounded-xl">
+                                <div className="w-3/6 sm:~w-36/64 ~h-28/48 border overflow-hidden rounded-xl">
                                     <iframe src={url} frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-full"></iframe>
                                 </div>
                                 <div className="flex flex-col justify-between gap-2 p-2 w-3/6 sm:~w-36/64">
@@ -37,9 +44,9 @@ export const CoursePage = () => {
                                         <p className=" ~text-xs/sm">{lecturer}</p>
                                     </Link>
 
-                                    <div to={`/courses/${_id}/view`} className="flex gap-2">
-                                        <Link className=" w-full p-2  bg-blue-700 rounded text-primary text-center ~text-xs/sm">View</Link>
-                                        <button className=" w-full p-2  bg-green-700 rounded text-primary ~text-xs/sm">Save</button>
+                                    <div className="flex gap-2">
+                                        <Link to={`/courses/${_id}/view`} className=" w-full p-2 bg-blue-500 hover:bg-blue-600 rounded text-primary text-center ~text-xs/sm">View</Link>
+                                        <button onClick={handleCourseSave} className="w-full p-2 bg-green-500 hover:bg-green-600 rounded text-primary ~text-xs/sm">Save</button>
                                     </div>
                                 </div>
                             </div>

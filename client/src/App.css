@@ -1,10 +1,12 @@
 #root {
     --primary: theme(colors.white);
     --secondary: theme(colors.black);
-    --primary_special: theme(colors.red.500);
-    --secondary_special: theme(colors.slate.100);
-    --primary_text: theme(colors.gray.500);
+    --special_blue: theme(colors.blue.500);
+    --special_green: theme(colors.green.500);
+    --primary_special: theme(colors.slate.300);
+    --secondary_special: theme(colors.gray.700);
   }
+
   body {
     font-family: 'Outfit', sans-serif;
 }

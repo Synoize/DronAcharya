@@ -85,10 +85,10 @@ export const AdminUsers = () => {
                                         <td className="border p-2">{email}</td>
                                         <td className="border p-2">{phone}</td>
                                         <td className="border p-2">
-                                            <Link to={`/admin/users/${_id}/edit`} className="bg-blue-500 text-white px-2 py-1 rounded">Edit</Link>
+                                            <Link to={`/admin/users/${_id}/edit`} className="bg-special_blue hover:bg-blue-600 text-white px-2 py-1 rounded">Edit</Link>
                                         </td>
                                         <td className="border p-2">
-                                            <button onClick={() => deleteUser(_id)} className="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                                            <button onClick={() => deleteUser(_id)} className="bg-red-500  hover:bg-red-600 text-white px-2 py-1 rounded">Delete</button>
                                         </td>
                                     </tr>)
                                 })}

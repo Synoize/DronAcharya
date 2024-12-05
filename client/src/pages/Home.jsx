@@ -12,7 +12,7 @@ export const Home = () => {
             </div>
         </section>
 
-        <section className="flex flex-col ~gap-8/12 ~p-8/20 bg-black">
+        <section className="flex flex-col ~gap-8/12 ~p-8/20 bg-secondary">
             <h2 className="~text-lg/4xl text-nowrap text-primary font-bold">ANYONE CAN BE ANYTHING !!!</h2>
             <div className="flex flex-col sm:flex-row-reverse sm:justify-between items-center sm:items-start ~gap-8/12 ">
                 <span>
@@ -22,7 +22,7 @@ export const Home = () => {
             </div>
         </section>
 
-        <section className="flex flex-col ~gap-8/20 ~p-8/20 bg-gradient-to-b from-black to-blue-800 ">
+        <section className="flex flex-col ~gap-8/20 ~p-8/20 bg-gradient-to-b from-secondary to-special_blue ">
             <h1 className="~text-lg/4xl text-primary font-semibold">TRENDING COURSES</h1>
             <div className="flex flex-col justify-center items-center sm:flex-row ~gap-8/20">
                 <span className="flex flex-col gap-4">
@@ -51,7 +51,7 @@ export const Home = () => {
             </div>
         </section>
         
-        <section className="flex flex-col ~gap-8/20 ~p-8/20 bg-gradient-to-b from-blue-800 to-black  ">
+        <section className="flex flex-col ~gap-8/20 ~p-8/20 bg-gradient-to-b from-special_blue to-secondary  ">
             <h1 className="~text-lg/4xl text-primary font-semibold">WHY CHOOSE DRONACHARYA OF ALL  ???</h1>
             <div className="flex flex-col sm:flex-row-reverse sm:justify-between items-center sm:items-start ~gap-8/12">
             <span>
