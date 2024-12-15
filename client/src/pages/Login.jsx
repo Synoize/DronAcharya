@@ -85,12 +85,12 @@ export const Login = () => {
             <ul>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="email" className="font-semibold text-gray-400">Email <span className="text-red-500">*</span></label>
-                    <input value={user.email} onChange={handleInputChange} autoFocus autoComplete="off" required type="email" name="email" id="email" className="outline-none font-semibold text-secondary sm:w-96" />
+                    <input value={user.email} onChange={handleInputChange} autoFocus autoComplete="off" required type="email" name="email" id="email" className="outline-none font-medium text-gray-600 sm:w-96" />
                 </li>
                 <li className="border p-2 flex flex-col justify-start">
                     <label htmlFor="password" className="font-semibold text-gray-400 text-nowrap">Password <span className="text-red-500">*</span></label>
                     <div className="flex justify-between items-start">
-                        <input value={user.password} onChange={handleInputChange} autoComplete="off" required type="password" name="password" id="password" className="w-full outline-none font-semibold text-secondary" />
+                        <input value={user.password} onChange={handleInputChange} autoComplete="off" required type="password" name="password" id="password" className="w-full outline-none font-medium text-gray-600 " />
                     </div>
                 </li>
 
@@ -101,6 +101,6 @@ export const Login = () => {
 
                 <button type="submit" className="w-full mt-4 p-4 bg-blue-500 text-primary hover:bg-blue-600">Login</button>
             </ul>
-        </form>
+        </form> 
     </section>
 }

@@ -18,7 +18,7 @@ const clorsOption = {
 };
 
 app.use(cors(clorsOption)); 
-app.use(express.json());
+app.use(express.json()); 
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
 app.use("/api/data", dataRoute);

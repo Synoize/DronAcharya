@@ -89,26 +89,26 @@ export const Register = () => {
             <ul>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="phone" className="font-semibold text-gray-400 text-nowrap">Phone <span className="text-red-500">*</span></label>
-                    <input value={user.phone} onChange={handleInputChange} required autoFocus autoComplete="off" type="number" name="phone" id="phone" className="outline-none font-semibold text-secondary sm:w-96" />
+                    <input value={user.phone} onChange={handleInputChange} required autoFocus autoComplete="off" type="number" name="phone" id="phone" className="outline-none font-medium text-gray-600 sm:w-96" />
                 </li>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="fullname" className="font-semibold text-gray-400">Username <span className="text-red-500">*</span></label>
 
-                    <input value={user.username} onChange={handleInputChange} required autoComplete="off" type="name" name="username" id="username" className="outline-none font-semibold text-secondary" />
+                    <input value={user.username} onChange={handleInputChange} required autoComplete="off" type="name" name="username" id="username" className="outline-none font-medium text-gray-600" />
                 </li>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="fullname" className="font-semibold text-gray-400">Fullname <span className="text-red-500">*</span></label>
-                    <input value={user.fullname} onChange={handleInputChange} required autoComplete="off" type="name" name="fullname" id="fullname" className="outline-none font-semibold text-secondary" />
+                    <input value={user.fullname} onChange={handleInputChange} required autoComplete="off" type="name" name="fullname" id="fullname" className="outline-none font-medium text-gray-600" />
 
                 </li>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="email" className="font-semibold text-gray-400">Email <span className="text-red-500">*</span></label>
-                    <input value={user.email} onChange={handleInputChange} required autoComplete="off" type="email" name="email" id="email" className="outline-none font-semibold text-secondary" />
+                    <input value={user.email} onChange={handleInputChange} required autoComplete="off" type="email" name="email" id="email" className="outline-none font-medium text-gray-600" />
                 </li>
                 <li className="border p-2 flex flex-col justify-start">
                     <label htmlFor="password" className="font-semibold text-gray-400 text-nowrap">Create Password <span className="text-red-500">*</span></label>
                     <div className="flex justify-between items-start">
-                        <input value={user.password} onChange={handleInputChange} required autoComplete="off" type="password" name="password" id="password" className="w-full outline-none font-semibold text-secondary" />
+                        <input value={user.password} onChange={handleInputChange} required autoComplete="off" type="password" name="password" id="password" className="w-full outline-none font-medium text-gray-600" />
                     </div>
                 </li>
 

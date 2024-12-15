@@ -18,7 +18,7 @@ const DropdownMenu = () => {
             {isOpen && (
                 <div className="absolute right-0 mt-8 w-48 rounded-md shadow-lg bg-gradient-to-r from-special_blue to-special_green ring-1 ring-black ring-opacity-5">
                     <div className="gap-4 bg-slate font-semibold flex flex-col p-4 px-4 ~text-sm/lg" role="menu">
-                        <button onClick={toggleMenu} className="w-4 h-4border self-end"><IoClose className="text-gray-100"/></button>
+                        {/* <button onClick={toggleMenu} className="w-4 self-end"><IoClose className="text-gray-100"/></button> */}
                         <Navbar />
                     </div>
                 </div>

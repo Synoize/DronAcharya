@@ -86,8 +86,8 @@ export const Contact = () => {
                 <NavLink to="/login" className="text-sm font-semibold ">or <p className="text-special_blue">login to your account</p></NavLink>
             </div>
 
-            <div className="p-2 ">
-                <GoArrowRight onClick={handleGoBack} className="text-red-500 text-xl cursor-pointer" />
+            <div className="p-2">
+                <GoArrowRight onClick={handleGoBack} className="text-red-500 text-xl cursor-pointer"/>
             </div>
         </div>
 
@@ -96,19 +96,19 @@ export const Contact = () => {
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="fullname" className="font-semibold text-gray-400 text-nowrap">Full Name <span className="text-red-500">*</span>
                     </label>
-                    <input value={contact.fullname} onChange={handleInputChange} required autoComplete="off" type="name" name="fullname" id="fullname" className="outline-none font-semibold text-gray-600 sm:w-96" />
+                    <input value={contact.fullname} onChange={handleInputChange} required autoComplete="off" type="name" name="fullname" id="fullname" className="outline-none font-medium text-gray-600 sm:w-96" />
                 </li>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="email" className="font-semibold text-gray-400">Email <span className="text-red-500">*</span></label>
-                    <input value={contact.email} onChange={handleInputChange} required autoComplete="off" type="email" name="email" id="email" className="outline-none font-semibold text-gray-600" />
+                    <input value={contact.email} onChange={handleInputChange} required autoComplete="off" type="email" name="email" id="email" className="outline-none font-medium text-gray-600" />
                 </li>
                 <li className="border border-b-0 p-2 flex flex-col justify-start">
                     <label htmlFor="phone" className="font-semibold text-gray-400 text-nowrap">Phone <span className="text-red-500">*</span></label>
-                    <input value={contact.phone} onChange={handleInputChange} required autoComplete="off" maxLength={1} type="number" name="phone" id="phone" className="outline-none font-semibold text-gray-600" />
+                    <input value={contact.phone} onChange={handleInputChange} required autoComplete="off" maxLength={1} type="number" name="phone" id="phone" className="outline-none font-medium text-gray-600" />
                 </li>
                 <li className="border p-2 flex flex-col justify-start">
                     <label htmlFor="messgae" className="font-semibold text-gray-400">Comment <span className="text-red-500">*</span></label>
-                    <textarea value={contact.message} onChange={handleInputChange} required autoFocus autoComplete="off" name="message" id="message" rows={5} className="scroll_yh outline-none font-semibold text-gray-600"></textarea>
+                    <textarea value={contact.message} onChange={handleInputChange} required autoFocus autoComplete="off" name="message" id="message" rows={5} className="scroll_yh outline-none font-medium text-gray-600"></textarea>
                 </li>
 
                 <button type="submit" className="w-full mt-4 p-4 bg-special_blue text-white hover:bg-blue-600">Continue</button>

@@ -21,7 +21,7 @@ export const CoursePage = () => {
                     <HiOutlineAdjustmentsHorizontal />filter<IoCaretDownSharp />
                 </div>
                 <form className="border p-2 px-4 flex justify-between items-center gap-1 rounded w-3/5 sm:w-2/5 ~text-xs/lg">
-                    <input onChange={(e) => setSearch(e.target.value)} value={search} type="search" name="search" id="search" placeholder="Search cources" className="outline-none text-secondary w-full bg-transparent" />
+                    <input onChange={(e) => setSearch(e.target.value)} value={search} autoFocus type="search" name="search" id="search" placeholder="Search cources" className="outline-none text-secondary w-full bg-transparent" />
                     <button type="submit"><BsSearch className="text-secondary" /></button>
                 </form>
             </div>
